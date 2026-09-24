@@ -23,8 +23,14 @@ export function createBridge({ token, now = () => new Date().toISOString() } = {
   return {
     setExecutorStatus(status) { executor = status; },
     async handle(request) {
-      if (!authenticated(request)) return json({ error: 'Unauthorized' }, 401);
       const url = new URL(request.url);
+      if (url.pathname === '/' && request.method === 'GET') {
+        return new Response('WhatsApp Personal Bridge is online. Use the protected API endpoints.', {
+          status: 200,
+          headers: { 'content-type': 'text/plain; charset=utf-8' }
+        });
+      }
+      if (!authenticated(request)) return json({ error: 'Unauthorized' }, 401);
       if (url.pathname === '/authorize' && request.method === 'POST') {
         authorized = true;
         return json({ authorized: true, at: now() });
