@@ -1,0 +1,6 @@
+name = "whatsapp-personal-bridge"
+main = "src/bridge.mjs"
+compatibility_date = "2026-09-24"
+
+[vars]
+# Set BRIDGE_TOKEN as a Cloudflare secret; never commit the real value.
