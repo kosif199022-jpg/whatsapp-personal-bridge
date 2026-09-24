@@ -2,6 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createBridge } from '../src/bridge.mjs';
 
+test('shows a public landing page when the root is opened in a browser', async () => {
+  const bridge = createBridge({ token: 'test-token' });
+  const response = await bridge.handle(new Request('https://bridge.test/'));
+  assert.equal(response.status, 200);
+  assert.match(await response.text(), /WhatsApp Personal Bridge/);
+});
+
 test('requires explicit prior authorization before queueing a message', async () => {
   const bridge = createBridge({ token: 'test-token' });
   const response = await bridge.handle(new Request('https://bridge.test/send', {
