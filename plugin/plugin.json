@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kosif-whatsapp",
+  "version": "0.5.1",
+  "description": "Send WhatsApp text, PDFs, images, files and bundles from ChatGPT, with connection and delivery checks and bridge account linking when available.",
+  "author": {
+    "name": "Kosif"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "KOSIF WhatsApp",
+        "shortDescription": "Send WhatsApp messages and files from ChatGPT",
+        "longDescription": "Use KOSIF WhatsApp from normal ChatGPT chats or Work to send text, images, PDFs, files and bundles, check connection and delivery status, and use account-linking tools when the bridge exposes them.",
+        "developerName": "Kosif",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive"
+        ],
+        "defaultPrompt": [
+          "Check whether my WhatsApp is connected.",
+          "Send a WhatsApp message to a phone number.",
+          "Send a WhatsApp message with a PDF or image.",
+          "Connect or relink my WhatsApp account."
+        ]
+      }
+    }
+  }
+}
+

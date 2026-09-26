@@ -1,0 +1,11 @@
+name = "wa-kosif-mcp"
+main = "index.mjs"
+compatibility_date = "2026-09-24"
+
+[[services]]
+binding = "BRIDGE"
+service = "wa-kosif"
+
+[observability]
+enabled = true
+redact_query_string = true

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "kosif-whatsapp": {
+      "type": "streamable-http",
+      "url": "https://wa-kosif-mcp.kosif199022.workers.dev/mcp",
+      "headers": {}
+    }
+  }
+}
+
